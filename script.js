@@ -3,8 +3,7 @@ console.log(typeof title);
 
 let screens = "Простые, Сложные, Интерактивные";
 console.log(screens.length);
-console.log(screens.toLowerCase());
-console.log(screens.split(","));
+console.log(screens.toLowerCase().split(","));
 
 
 let screenPrice = 17;
