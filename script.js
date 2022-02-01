@@ -1,12 +1,12 @@
 let title               = prompt('Как называется ваш проект?');
 let screens             = prompt('Какие типы экранов нужно разработать?');
-let screenPrice         = prompt('Сколько будет стоить данная работа?');
+let screenPrice         = Number(prompt('Сколько будет стоить данная работа?'));
 let rollback            = 650;
 let adaptive            = confirm('Нужен ли адаптив на сайте?');
 let service1            = prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice1       = prompt('Сколько это будет стоить?');
+let servicePrice1       = Number(prompt('Сколько это будет стоить?'));
 let service2            = prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice2       = prompt('Сколько это будет стоить?');
+let servicePrice2       = Number(prompt('Сколько это будет стоить?'));
 
 
 
@@ -15,29 +15,29 @@ const showTypeOf = function(variable) {
     console.log(variable, typeof variable);
 };
 
-const getTitle = function(title) {
-  title = title.trim();
-  return title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
+const getTitle = function(str) {
+  str = str.trim();
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
 title = getTitle(title);
 
-function stringToArray(screens){
-  return screens.toLowerCase ().trim().split(" ");
+function stringToArray(array){
+  return array.toLowerCase ().trim().split(" ");
 }
 let arr = stringToArray(screens);
 
-let getAllServicePrice = function(servicePrice1, servicePrice2) {
-  return Number(servicePrice1) + Number(servicePrice2);
+let getAllServicePrice = function(priceOne, priceTwo) {
+  return priceOne + priceTwo;
 };
 let allServicePrices = getAllServicePrice(servicePrice1, servicePrice2);
 
-function getFullPrice(screenPrice, allServicePrices) {
-  return Number(screenPrice) + Number(allServicePrices);
+function getFullPrice(priceOfWork, allServicePrices) {
+  return priceOfWork + allServicePrices;
 }
 let fullPrice = getFullPrice(screenPrice, allServicePrices);
 
 const getServicePercentPrices =function(fullPrice, rollback) {
-  return Number(fullPrice) - Number(rollback)/100;
+  return fullPrice - rollback/100;
 };
 let servicePercentPrice = getServicePercentPrices(fullPrice, rollback);
 
@@ -61,4 +61,4 @@ showTypeOf(adaptive);
 console.log(title);
 console.log(arr);
 console.log(getRollbackMessage(fullPrice));
-console.log(Math.ceil(getServicePercentPrices(fullPrice, rollback)));
+console.log("Итоговая сумма: " + Math.ceil(getServicePercentPrices(fullPrice, rollback)));
