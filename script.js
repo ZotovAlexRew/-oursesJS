@@ -14,23 +14,6 @@ let servicePercentPrice = Number(fullPrice) - Number(rollback/100);
 
 
 
-console.log("Название проекта: " + title);
-//console.log(screens.length);
-console.log("Тип экрана: " + screens);
-console.log("Стоимость: " + screenPrice);
-//console.log("Стоимасть разработки сайтов" + " " + rollback + " " + "долларов");
-//console.log(typeof fullPrice);
-console.log(adaptive);
-//console.log(fullPrice * (rollback / 100));
-//alert("Прохожу курсы от GloAcadevy");
-//console.log("Меня зовут Саша");
-console.log("Услуга: " + service1);
-console.log("Цена: " + servicePrice1);
-console.log("Услуга: " + service2);
-console.log("Цена: " + servicePrice2);
-console.log("Полная стоимость: " + fullPrice);
-console.log("Итоговая стоимость: " + Math.ceil(servicePercentPrice));
-
 
 if (fullPrice > 30000) {
   console.log("Даем скидку в 10%");
@@ -41,3 +24,27 @@ if (fullPrice > 30000) {
 } else if (fullPrice < 0) {
   console.log("Упс, что-то пошло не так!");
 }
+
+
+console.log(typeof title);
+console.log(typeof screenPrice);
+console.log(typeof adaptive);
+console.log(typeof fullPrice);
+console.log(screens.length);
+
+
+console.log("Стоимасть разработки сайтов" + " " + rollback + " " + "долларов");
+
+console.log("Название проекта: " + title);
+console.log("Тип экрана: " + screens);
+console.log("Стоимость: " + screenPrice);
+console.log(adaptive);
+//console.log(fullPrice * (rollback / 100));
+//alert("Прохожу курсы от GloAcadevy");
+//console.log("Меня зовут Саша");
+console.log("Услуга: " + service1);
+console.log("Цена: " + servicePrice1);
+console.log("Услуга: " + service2);
+console.log("Цена: " + servicePrice2);
+console.log("Полная стоимость: " + fullPrice);
+console.log("Итоговая стоимость: " + Math.ceil(servicePercentPrice));
