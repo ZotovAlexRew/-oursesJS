@@ -19,10 +19,10 @@ const asking = function() {
     title       = prompt('Как называется ваш проект?');
     screens     = prompt('Какие типы экранов нужно разработать?');
 
-    screenPrice = prompt('Сколько будет стоить данная работа?');
+    screenPrice = +prompt('Сколько будет стоить данная работа?');
 
     while (!isNumber(screenPrice)) {
-        screenPrice = prompt('Сколько будет стоить данная работа?');
+        screenPrice = +prompt('Сколько будет стоить данная работа?');
     }
     
     
