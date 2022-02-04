@@ -34,8 +34,9 @@ const appData = {
   getAllServicePrices: function() {
   let sum = 0;
 
-    for( let i = 0; i < 2; i++) 
+    for( let i = 0; i < 2; i++)
     {
+      let price = 0;
       if ( i === 0) 
       {
         appData.service1 = prompt('Какой дополнительный тип услуги нужен?');
@@ -47,11 +48,10 @@ const appData = {
       
       do 
       {
-        sum = prompt('Сколько это будет стоить?');
-      } while (!appData.isNumber(sum));
+        price = prompt('Сколько это будет стоить?');
+      } while (!appData.isNumber(price));
 
-      sum = +sum;
-      sum += sum;
+      sum += +price;
     }
     return sum;
   },
