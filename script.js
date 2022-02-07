@@ -11,9 +11,12 @@ const appData = {
   servicePercentPrice: 0,
 
   isNumber: function(num) 
-  { if (num === null || num[0] === ' ' || num[num.length-1] === ' '){
-    return false;
-  }
+  { 
+    num = num.trim();
+    if (num === null || num[0] === ' ' || num[num.length-1] === ' ')
+    {
+      return false;
+    }
     return !isNaN(parseFloat(num)) && isFinite(num);
   },
 
@@ -65,16 +68,10 @@ const appData = {
   },
 
   addPrice: function(){
-    //for( let screen of appData.screens) {
-    //  appData.screenPrice += +screen.price;
-    //}
-    let screenPrice = [];
-      for (let i = 0; i < appData.screens.length; i++){
-        screenPrice.push(appData.screens[i].price);
-      }
-    appData.screenPrice = screenPrice.reduce(function(sum, accum){
-      return sum + accum;
-    });
+
+    appData.screenPrice = appData.screens.reduce(function(sum, accum){
+      return sum + accum.price;
+    }, 0);
     
     for(let key in appData.services)
     {
