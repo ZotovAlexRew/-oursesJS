@@ -5,14 +5,10 @@ const btnReset = button[1];
 const plus = document.querySelector('.screen_btn');
 const percent = document.querySelectorAll('.percent');
 const number = document.querySelectorAll('.number');
-const input = document.querySelector('div.rollback input');
+const input = document.querySelector('div.rollback input[type="range"]');
 const span = document.querySelector('div.rollback span.range-value');
 const inputRight = document.getElementsByClassName('total-input');
-const inputRight1 = inputRight[0];
-const inputRight2 = inputRight[1];
-const inputRight3 = inputRight[2];
-const inputRight4 = inputRight[3];
-const inputRight5 = inputRight[4];
+const totalInput = inputRight[4];
 let blockWithClassScreen = document.querySelectorAll('.screen');
 
 
@@ -26,11 +22,7 @@ console.log(number);
 console.log(input);
 console.log(span);
 console.log(inputRight);
-console.log(inputRight1);
-console.log(inputRight2);
-console.log(inputRight3);
-console.log(inputRight4);
-console.log(inputRight5);
+console.log(totalInput);
 console.log(blockWithClassScreen);
 
 /*
