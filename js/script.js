@@ -151,9 +151,9 @@ const appData = {
   start: function(){
     appData.addScreens();
 
-    if (appData.screens.find((screen) => !appData.isNumber(screen.count))) {return;}
+    //if (appData.screens.find((screen) => !appData.isNumber(screen.count))) {return;}
 
-    if (appData.screens.find((screen) => screen.price === 0)) {return;}
+    if (appData.screens.find((screen) => screen.price === 0 ||  !appData.isNumber(screen.count))) {return;}
 
     appData.addServices();
     appData.addPrice();
