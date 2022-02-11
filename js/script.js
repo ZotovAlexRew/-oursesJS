@@ -69,11 +69,12 @@ const appData = {
         });
 
     });
-    for (let i = 0; i<appData.screens.length; i++) {
+
+    /*for (let i = 0; i < appData.screens.length; i++) {
       if (appData.screens[i].name === 'Тип экранов' || appData.screens[i].count === 0) {
         appData.screens = [];
       }
-    }
+    }*/
 
   },
 
@@ -150,6 +151,8 @@ const appData = {
     
   start: function(){
     appData.addScreens();
+    if (appData.screens.find((screen) => screen.price === 0)) {return;}
+
     appData.addServices();
     appData.addPrice();
     //appData.logger();
