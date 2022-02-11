@@ -70,11 +70,6 @@ const appData = {
 
     });
 
-    /*for (let i = 0; i < appData.screens.length; i++) {
-      if (appData.screens[i].name === 'Тип экранов' || appData.screens[i].count === 0) {
-        appData.screens = [];
-      }
-    }*/
 
   },
 
@@ -142,6 +137,10 @@ const appData = {
     }
   },
 
+    isNumber: function(num) {
+      return !isNaN(parseFloat(num)) && isFinite(num);
+    },
+
   logger: function(){
     console.log(appData.fullPrice);
     console.log(appData.servicePercentPrice);
@@ -151,6 +150,9 @@ const appData = {
     
   start: function(){
     appData.addScreens();
+
+    if (appData.screens.find((screen) => !appData.isNumber(screen.count))) {return;}
+
     if (appData.screens.find((screen) => screen.price === 0)) {return;}
 
     appData.addServices();
