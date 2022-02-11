@@ -1,31 +1,38 @@
 const title = document.getElementsByTagName('h1')[0];
-const button = document.getElementsByClassName('handler_btn');
-const btnStart = button[0];
-const btnReset = button[1];
 const plus = document.querySelector('.screen_btn');
 const percent = document.querySelectorAll('.percent');
 const number = document.querySelectorAll('.number');
+
 const input = document.querySelector('div.rollback input[type="range"]');
 const span = document.querySelector('div.rollback span.range-value');
-const inputRight = document.getElementsByClassName('total-input');
-const totalInput = inputRight[4];
+
+const buttonStart = document.getElementsByClassName('handler_btn')[0];
+const buttonReset = document.getElementsByClassName('handler_btn')[1];
+
+const total = document.getElementsByClassName('total-input')[0];
+const totalCount = document.getElementsByClassName('total-input')[1];
+const totalCountOther = document.getElementsByClassName('total-input')[2];
+const fullTOtalCount = document.getElementsByClassName('total-input')[3];
+const totalCountRollback = document.getElementsByClassName('total-input')[4];
+
+
 let blockWithClassScreen = document.querySelectorAll('.screen');
 
 
-console.log(title);
-console.log(button);
-console.log(btnStart);
-console.log(btnReset);
-console.log(plus);
-console.log(percent);
-console.log(number);
-console.log(input);
-console.log(span);
-console.log(inputRight);
-console.log(totalInput);
-console.log(blockWithClassScreen);
+//console.log(title);
+//console.log(button);
+//console.log(btnStart);
+//console.log(btnReset);
+//console.log(plus);
+//console.log(percent);
+//console.log(number);
+//console.log(input);
+//console.log(span);
+//console.log(inputRight);
+//console.log(totalInput);
+//console.log(blockWithClassScreen);
 
-/*
+
 const appData = {
   title: '',
   screens: [],
@@ -153,4 +160,4 @@ const appData = {
 
 };
 
-appData.start(); */
+appData.start();
