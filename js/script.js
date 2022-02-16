@@ -125,7 +125,9 @@ const appData = {
 
   //Вычисление всех сумм
   addPrice: function(){
-
+    const select = cmsVariant.querySelector('select');
+    const selectValue = select.options[select.selectedIndex].value;
+    
     for (let screen of this.screens)
     {
       this.screenPrice += +screen.price;
@@ -142,6 +144,15 @@ const appData = {
     }
 
     this.fullPrice =  +this.screenPrice + this.servicePricesPercent + this.servicePricesNumber;
+    if(Number(selectValue)) 
+    {
+      this.fullPrice += this.fullPrice * +selectValue /100;
+    }
+    else
+    {
+      let percent = cmsVariant.querySelector('#cms-other-input');
+      this.fullPrice += this.fullPrice * +percent.value / 100;
+    }
 
     this.servicePercentPrice = Math.ceil(this.fullPrice - this.fullPrice * (this.rollback / 100));
 
@@ -288,6 +299,7 @@ const appData = {
     this.clearResult();
     this.clearServicesCheckbox();
     this.deletedScreens();
+    this.hideCms();
   },
 
 };
