@@ -47,6 +47,7 @@ const appData = {
     input.addEventListener('input', this.movingTheSlider.bind(this));
     input.addEventListener('change', this.movingTheSlider.bind(this));
     cms.addEventListener('click', this.showCms);
+    cmsVariant.addEventListener('click', this.other);
   },
   
   //Заголовок страницы
@@ -162,6 +163,21 @@ const appData = {
     }
   },
 
+  //Работа с CMS-другое
+  other: function() {
+    const select = cmsVariant.querySelector('select');
+    const selectName = select.options[select.selectedIndex].textContent;
+    const percentBlock = cmsVariant.querySelector('.main-controls__input');
+
+    if(selectName === 'Другое') {
+      percentBlock.style.display = 'block';
+    }
+    else if (selectName !== 'Другое')
+    {
+      percentBlock.style.display = 'none';
+    }
+  },  
+
   //Блокировка типо экранов и кнокки плюс
   block: function () {
     if(this.screens.length !==0) {
@@ -186,6 +202,15 @@ const appData = {
     plusBtn.removeAttribute('disabled', 'disabled');
   },
   
+  //
+  hideCms: function() {
+    if(cms.checked)
+    {
+      cms.checked = false;
+      cmsVariant.style.display = "none";
+    }
+  },
+
   //Чистка результата
   clearResult: function() {
     total.value = '0';
